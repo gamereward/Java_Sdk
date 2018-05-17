@@ -42,7 +42,9 @@ public class GrdManager {
 	public static final int SUCCESS_TRANSSTATUS = 0;
 	public static final int PENDING_TRANSSTATUS = 1;
 	public static final int ERROR_TRANSSTATUS = 2;
-	private static final String baseUrl = "https://gamereward.io/appapi/";
+	private static final String MAIN_NET_URL = "https://gamereward.io/appapi/";
+	private static final String TEST_NET_URL = "https://test.gamereward.io/appapi/";
+	private static String baseUrl = "";
 
 	public GrdManager() {
 	}
@@ -50,9 +52,15 @@ public class GrdManager {
 	private static String api_Id = "";
 	private static String api_Secret = "";
 
-	public static void init(String appId, String secret) {
+	public static void init(String appId, String secret,GrdNet net) {
 		api_Id = appId;
 		api_Secret = secret;
+		if(net==GrdNet.MainNet) {
+			baseUrl=MAIN_NET_URL;
+		}
+		else {
+			baseUrl=TEST_NET_URL;
+		}
 	}
 
 	public static String md5(String s) {

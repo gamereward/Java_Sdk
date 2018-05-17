@@ -10,6 +10,7 @@ import io.gamereward.grd.GrdAccountInfo;
 import io.gamereward.grd.GrdCustomResult;
 import io.gamereward.grd.GrdLeaderBoard;
 import io.gamereward.grd.GrdManager;
+import io.gamereward.grd.GrdNet;
 import io.gamereward.grd.GrdResult;
 import io.gamereward.grd.GrdResultBase;
 import io.gamereward.grd.GrdSessionData;
@@ -627,7 +628,7 @@ public class Test {
 	public static void main(String[]args) {
 		final String appId = "6e672e888487bd8346b946a715c74890077dc332";
 		final String secret = "acc3e0404646c57502b480dc052c4fe15878a7ab84fb43402106c575658472faf7e9050c92a851b0016442ab604b0488aab3e67537fcfda3650ad6cfd43f7974";
-		GrdManager.init(appId, secret);
+		GrdManager.init(appId, secret,GrdNet.TestNet);
 		clearScreen();
 		System.out.print( "USER NAME:");
 		username = scanner.nextLine();
